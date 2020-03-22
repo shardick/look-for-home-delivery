@@ -1,0 +1,50 @@
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Nunito");
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import "~bootstrap/scss/bootstrap";
+
+@import "map";
+
+.navbar-brand {
+    img {
+        vertical-align: middle;
+    }
+
+    span.title {
+        line-height:1.2;
+        font-weight: 200;
+        display:inline-block;
+        vertical-align:middle;
+        padding:0 0 0 15px;
+    }
+
+    span.subtitle {
+        display:block;
+        font-size:50%;
+        line-height:1;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .navbar-brand small {
+        display: none;
+    }
+}
+
+footer {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    background-color: #ffffff;
+}
+
+footer p {
+    margin-bottom: 0.25rem;
+}
+
+.box-shadow {
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
+}
