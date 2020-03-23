@@ -76,6 +76,9 @@
                             <a class="nav-link" href="{{ route('stores') }}"><i class="fas fa-shopping-cart"></i> {{ __('common.find_a_store') }}</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="{{ route('volunteers.register') }}"><i class="fas fa-people-carry"></i> {{ __('common.volunteer.register') }}</a>
+                        </li>
+                        <li class="nav-item">
                            <a class="nav-link" href="{{ route('stores.register') }}"><i class="fas fa-building"></i> {{ __('common.register_your_store') }}</a>
                         </li>
                     </ul>

@@ -7,6 +7,7 @@
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
 
+                {{--
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
@@ -65,6 +66,15 @@
                             </div>
                         </div>
                     </form>
+                </div>
+                --}}
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <a href="{{ route('login.provider', [ "provider" => "google" ]) }}" class="btn btn-danger btn-block mb-3"><i class="fab fa-google"></i> Login con Google</a>
+                            <a href="{{ route('login.provider', [ "provider" => "facebook" ]) }}" class="btn btn-primary btn-block"><i class="fab fa-facebook-square"></i> Login con Facebook</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

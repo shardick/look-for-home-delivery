@@ -20,5 +20,9 @@ return [
     "contribute" => "Contribuisci su GitHub",
     "made_with_love" => "Made with :icon from ",
     "ask_for_support" => "Bisogno di aiuto? Scrivi a ",
-    "store_register_success" => "Negozio registrato con successo! Grazie!"
+    "store_register_success" => "Negozio registrato con successo! Grazie!",
+    "login.google" => "Login con Google",
+    "login.facebook" => "Login con Facebook",
+    "volunteer.register" => "Registrati come volontario",
+    "subscribe" => "Iscriviti"
 ];
