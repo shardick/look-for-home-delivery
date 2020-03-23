@@ -19,7 +19,7 @@
         <div class="col-md-4 col-12">
             <h3><i class="fas fa-people-carry fa-2x text-success"></i><br/>Vuoi offrirti come volontario per aiutare chi è in difficoltà e non può uscire?</h3>
             <p>
-                <a href="{{ route("volunteers.register") }} class="btn btn-success my-2">{{ __("common.subscribe") }} </a>
+                <a href="{{ route("volunteers.register") }}" class="btn btn-success my-2">{{ __("common.subscribe") }} </a>
             </p>
         </div>
         <div class="col-12 lead text-muted text-center"><a href="{{ route("common.page", [ "view" => "info" ]) }}"><i class="fas fa-question-circle"></i></i> Cos'è questo sito?</a></div>
