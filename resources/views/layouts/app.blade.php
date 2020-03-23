@@ -90,7 +90,7 @@
         <footer class="text-muted">
             <div class="container">
                 <div class="float-right">
-                    <a href=""><i class="fab fa-github"></i> {{ __('common.contribute') }}</a>
+                    <a target="_blank" href="https://github.com/shardick/look-for-home-delivery"><i class="fab fa-github"></i> {{ __('common.contribute') }}</a>
                 </div>
                 <p>{!! __("common.made_with_love", [ "icon" => '<i class="fas fa-heart"></i>' ]) !!} {{ env("AUTHOR") }}</p>
                 <p>{{ __("common.ask_for_support") }} <a href="mailto:{{ env('MAIL_FROM_ADDRESS') }}">{{ env('MAIL_FROM_ADDRESS') }}</a></p>
