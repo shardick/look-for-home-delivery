@@ -12,11 +12,13 @@ Così, su questo sito, gli utenti possono trovare facilmente chi offre questi se
 # Instalazione e configurazione
 
 ## Requisiti
-L'applicazione è basata su Laravel 5.7 e MySQL.
+L'applicazione è basata su [Laravel 7](https://laravel.com/docs/7.x/installation) e MySQL.
 
-- Laravel 5.7
-- MySQL (o XAMPP\WAMPP)
-- Node.js con versione compatibile con Mix
+- XAMPP o equivalente
+- MySQL
+- PHP 
+- [Composer](https://getcomposer.org/)
+- [Node.js](https://nodejs.org/it/) con versione compatibile con Mix
 
 ## Installazione
 
