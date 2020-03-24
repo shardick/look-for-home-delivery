@@ -59,6 +59,7 @@ class MapManager {
                 }
                 else
                 {
+                    $('#map-results-message').addClass('d-none');
                     var template = document.getElementById('store-template').innerHTML;
                     var rendered = Mustache.render(template, { stores: response });
                     document.getElementById('store-list-container').innerHTML = rendered;

@@ -37191,6 +37191,7 @@ var MapManager = /*#__PURE__*/function () {
         if (response.length == 0) {
           $('#map-results-message').removeClass('d-none');
         } else {
+          $('#map-results-message').addClass('d-none');
           var template = document.getElementById('store-template').innerHTML;
           var rendered = Mustache.render(template, {
             stores: response
