@@ -23,6 +23,7 @@
         "php-http/guzzle6-adapter": "^2.0",
         "socialiteproviders/facebook": "^1.0",
         "socialiteproviders/google": "^3.0",
+        "stepandalecky/kml-parser": "^0.2.2",
         "toin0u/geocoder-laravel": "^4.3"
     },
     "require-dev": {
