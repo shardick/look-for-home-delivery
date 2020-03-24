@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Stores;
 
 use App\Http\Controllers\Controller;
+use App\Models\Geo\Province;
 use App\Models\Stores\Store;
 use App\Models\Stores\StoreCategory;
 use Illuminate\Http\Request;
@@ -41,36 +42,31 @@ class StoreController extends Controller
 
     public function register()
     {
-        $categories = StoreCategory::all();
+        $categories = StoreCategory::orderBy('name')->get();
+        $provinces = Province::orderBy('name')->get();
 
-        return view('stores.register', [ "categories" => $categories ]);
+        return view('stores.register', [ "categories" => $categories, "provinces" => $provinces ]);
     }
 
     public function registerAction(Request $request)
     {
-        //$geocodingResponse = Http::get('https://nominatim.openstreetmap.org/search?street=' . $request->address . '&postalcode=' . $request->zipcode . '&city=' . $request->city . '&format=json');
-
-        //$url = 'https://nominatim.openstreetmap.org/search?street=' . urlencode($request->input('address')) . '&postalcode=' . $request->input('zipcode') . '&city=' . $request->input('locality') . '&format=json';
-
-        //dd($url);
-
-        //$geocodingResponse = Http::get($url)->json();
-
-
         $geocodingResponse = app('geocoder')->geocode($request->input('address') . ' ' . $request->input('zipcode') . ' ' . $request->input('locality'))->get();
-
-        //dd($geocodingResponse->body());
 
         $data = $request->all();
 
-        //dd($geocodingResponse->first());
+        if ($geocodingResponse->count() > 0)
+        {
+            $data["lat"] = $geocodingResponse->first()->getCoordinates()->getLatitude();
+            $data["lng"] = $geocodingResponse->first()->getCoordinates()->getLongitude();
 
-        $data["lat"] = $geocodingResponse->first()->getCoordinates()->getLatitude();
-        $data["lng"] = $geocodingResponse->first()->getCoordinates()->getLongitude();
-
-        $store = new Store();
-        $store->create($data);
-
-        return view('stores.confirm');
+            $store = new Store();
+            $store->create($data);
+    
+            return view('stores.confirm');
+        }
+        else
+        {
+            return back()->withErrors([ "address" => "Indirizzo non trovato" ])->withInput();
+        }
     }
 }

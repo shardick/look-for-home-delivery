@@ -230,4 +230,6 @@ return [
 
     ],
 
+    'enable_volunteers_registration' => env('ENABLE_VOLUNTEERS_REGISTRATION', false)
+
 ];

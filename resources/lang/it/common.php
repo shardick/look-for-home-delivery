@@ -24,5 +24,11 @@ return [
     "login.google" => "Login con Google",
     "login.facebook" => "Login con Facebook",
     "volunteer.register" => "Registrati come volontario",
-    "subscribe" => "Iscriviti"
+    "subscribe" => "Iscriviti",
+    "display_name" => "Nome visualizzato",
+    "volunteers_confirm_success" => "Dati salvati con successo! Grazie!",
+    "yes" => "Sì",
+    "no" => "No",
+    "address_not_found" => "Indirizzo non trovato",
+    "website" => "Sito web"
 ];

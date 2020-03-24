@@ -31,6 +31,7 @@ Route::namespace('Common')->group(function() {
 
 Route::namespace('Volunteers')->group(function() {
     Route::get('/volunteers/register', 'VolunteersController@register')->name('volunteers.register')->middleware('auth');
+    Route::post('/volunteers/register', 'VolunteersController@registerAction')->name('volunteers.register.action')->middleware('auth');
 });
 
 Route::namespace('Auth')->group(function() {

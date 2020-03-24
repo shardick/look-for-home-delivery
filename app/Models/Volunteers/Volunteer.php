@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Volunteer extends Model
 {
     protected $fillable = [
-        'name', 'user_id', 'address', 'zipcode', 'country', 'province', 'lat', 'lng', 'locality', 'telephone_number',
+        'display_name', 'user_id', 'address', 'zipcode', 'country', 'province', 'lat', 'lng', 'locality', 'telephone_number',
             'comments'
     ];
 
@@ -15,6 +15,8 @@ class Volunteer extends Model
         'country' => 'IT',
         'comments' => '',
     ];
+
+    protected $hidden = [ 'user_id', 'address', 'zipcode', 'country', 'province', 'locality', 'telephone_number', 'comments'];
 
     public function user()
     {

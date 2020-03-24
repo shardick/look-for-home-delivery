@@ -9,7 +9,7 @@ class Store extends Model
 {
     protected $fillable = [
         'name', 'store_category_id', 'address', 'zipcode', 'country', 'province', 'lat', 'lng', 'logo', 'locality', 'telephone_number', 'email',
-            'comments', 'home_delivery_enabled', 'pickup_in_store_enabled'
+            'comments', 'home_delivery_enabled', 'pickup_in_store_enabled', 'website'
     ];
     //
 
@@ -17,7 +17,8 @@ class Store extends Model
         'country' => 'IT',
         'comments' => '',
         'home_delivery_enabled' => false,
-        'pickup_in_store_enabled' => false
+        'pickup_in_store_enabled' => false,
+        'email' => ''
     ];
 
     public function category()
