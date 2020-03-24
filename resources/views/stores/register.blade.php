@@ -164,7 +164,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="pickup_in_store_enabled" class="col-md-4 col-form-label text-md-right">{{ __('common.pickup_in_store') }}</label>
+                            <label for="pickup_in_store_enabled" class="col-md-4 col-form-label text-md-right">{{ __('common.pickup_in_store') }} *</label>
 
                             <div class="col-md-6">
                             <select name="pickup_in_store_enabled" id="pickup_in_store_enabled" class="form-control" required>
@@ -191,6 +191,12 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-4">&nbsp;</div>
+                            <div class="col-md-6">
+                                {{ __("common.mandatory_fields") }}
                             </div>
                         </div>
 

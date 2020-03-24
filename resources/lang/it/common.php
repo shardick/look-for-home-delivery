@@ -30,5 +30,6 @@ return [
     "yes" => "Sì",
     "no" => "No",
     "address_not_found" => "Indirizzo non trovato",
-    "website" => "Sito web"
+    "website" => "Sito web",
+    "mandatory_fields" => "* Campi obbligatori"
 ];
