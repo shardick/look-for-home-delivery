@@ -37130,7 +37130,9 @@ var MapManager = /*#__PURE__*/function () {
   function MapManager() {
     _classCallCheck(this, MapManager);
 
-    this._map = L.map("map").setView([51.505, -0.09], 13);
+    this._map = L.map("map", {
+      maxZoom: 35
+    }).setView([51.505, -0.09], 13);
     this._markers = L.layerGroup();
 
     this._markers.addTo(this._map);
@@ -37172,6 +37174,8 @@ var MapManager = /*#__PURE__*/function () {
       var instance = this;
       var ne = bounds.getNorthEast();
       var sw = bounds.getSouthWest();
+      $('#map-results-message').addClass('d-none');
+      $('#store-list-container').empty();
       $.get("/stores/locate", {
         ne_lat: ne.lat,
         ne_lon: ne.lng,
@@ -37181,13 +37185,18 @@ var MapManager = /*#__PURE__*/function () {
         $(response).each(function (index, el) {
           var marker = L.marker([el.lat, el.lng]);
           marker.bindPopup("<b>" + el.name + "</b><br/>" + el.address + "<br/>" + el.telephone_number + " - " + el.email);
+          marker.addTo(instance._markers);
+        });
+
+        if (response.length == 0) {
+          $('#map-results-message').removeClass('d-none');
+        } else {
           var template = document.getElementById('store-template').innerHTML;
           var rendered = Mustache.render(template, {
             stores: response
           });
           document.getElementById('store-list-container').innerHTML = rendered;
-          marker.addTo(instance._markers);
-        });
+        }
       });
     }
   }, {
@@ -37220,8 +37229,8 @@ var MapManager = /*#__PURE__*/function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! E:\Progetti\look-for-home-delivery\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! E:\Progetti\look-for-home-delivery\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! D:\Personal\look-for-home-delivery\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! D:\Personal\look-for-home-delivery\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

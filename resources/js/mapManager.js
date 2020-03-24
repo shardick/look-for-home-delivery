@@ -1,7 +1,7 @@
 class MapManager {
 
     constructor() {
-        this._map = L.map("map").setView([51.505, -0.09], 13);
+        this._map = L.map("map", { maxZoom: 35 }).setView([51.505, -0.09], 13);
         this._markers = L.layerGroup();
         this._markers.addTo(this._map);
         L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -28,6 +28,11 @@ class MapManager {
         var instance = this;
         var ne = bounds.getNorthEast();
         var sw = bounds.getSouthWest();
+
+        $('#map-results-message').addClass('d-none');
+
+        $('#store-list-container').empty();
+
         $.get(
             "/stores/locate",
             { ne_lat: ne.lat, ne_lon: ne.lng, sw_lat: sw.lat, sw_lon: sw.lng },
@@ -45,12 +50,19 @@ class MapManager {
                             el.email
                     );
 
+                    marker.addTo(instance._markers);
+                });
+
+                if (response.length == 0)
+                {
+                    $('#map-results-message').removeClass('d-none');
+                }
+                else
+                {
                     var template = document.getElementById('store-template').innerHTML;
                     var rendered = Mustache.render(template, { stores: response });
                     document.getElementById('store-list-container').innerHTML = rendered;
-
-                    marker.addTo(instance._markers);
-                });
+                }
             }
         );
     };

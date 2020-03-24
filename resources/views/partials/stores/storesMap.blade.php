@@ -1,4 +1,7 @@
 <div id="map" class="mapbox"></div>
+<div class="alert alert-danger d-none mt-3 mb-3" id="map-results-message" role="alert">
+  {{ __('common.no_stores') }}
+</div>
 <div id="store-list-container" class="row mt-3 mb-3"></div>
   <script type="x-tmpl-mustache" id="store-template">
     @{{#stores}}
@@ -18,7 +21,7 @@
             </p>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
-                <a href="/stores/detail/@{{ id }}" class="btn btn-sm btn-outline-secondary">{{ __('Dettagli') }}</a>
+                <a href="/stores/detail/@{{ id }}" class="btn btn-sm btn-outline-secondary">{{ __('common.view') }}</a>
               </div>
             </div>
           </div>
