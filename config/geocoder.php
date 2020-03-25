@@ -2,6 +2,7 @@
 
 use Geocoder\Provider\Chain\Chain;
 use Geocoder\Provider\GeoPlugin\GeoPlugin;
+use Geocoder\Provider\GoogleMaps\GoogleMaps;
 use Geocoder\Provider\LocationIQ\LocationIQ;
 use \Http\Adapter\Guzzle6\Client;
 
@@ -60,6 +61,10 @@ return [
             LocationIQ::class => [
                 env('LOCATIONIQ_API_KEY', ''),
             ],
+            GoogleMaps::class => [
+                env('GOOGLE_MAPS_LOCALE', 'it-IT'),
+                env('GOOGLE_GEOCODING_API_KEY'),
+            ]
         ],
     ],
 

@@ -11,6 +11,6 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.scripts(['resources/js/plugins/mustache.js'], 'public/js/plugins.js');
+mix.scripts(['resources/js/plugins/mustache.js', 'resources/js/plugins/leaflet.awesome-markers.min.js'], 'public/js/plugins.js');
 mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css');

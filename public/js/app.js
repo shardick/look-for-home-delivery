@@ -37183,7 +37183,13 @@ var MapManager = /*#__PURE__*/function () {
         sw_lon: sw.lng
       }, function (response) {
         $(response).each(function (index, el) {
-          var marker = L.marker([el.lat, el.lng]);
+          var icon = L.AwesomeMarkers.icon({
+            icon: el.category.icon,
+            prefix: 'fa'
+          });
+          var marker = L.marker([el.lat, el.lng], {
+            icon: icon
+          });
           marker.bindPopup("<b>" + el.name + "</b><br/>" + el.address + "<br/>" + el.telephone_number + " - " + el.email);
           marker.addTo(instance._markers);
         });
@@ -37230,8 +37236,8 @@ var MapManager = /*#__PURE__*/function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\Personal\look-for-home-delivery\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! D:\Personal\look-for-home-delivery\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! E:\Progetti\look-for-home-delivery\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! E:\Progetti\look-for-home-delivery\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

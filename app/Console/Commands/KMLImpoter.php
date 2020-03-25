@@ -67,8 +67,6 @@ class KMLImpoter extends Command
 
                 $coordinates = explode(',', $placemark["point"]);
 
-                $color = $p->getColorStyle()->getStyleUrl();
-
                 $category = StoreCategory::where('name', 'Altro')->first()->id;
 
                 $geocodingResponse = app('geocoder')->reverse($coordinates[1], $coordinates[0])->get();
@@ -99,9 +97,9 @@ class KMLImpoter extends Command
                             "store_category_id" => $category
                         ]);
                     }
-                }            
+                }
             }
-        }            
+        }
 
         dd($placemarks);
     }

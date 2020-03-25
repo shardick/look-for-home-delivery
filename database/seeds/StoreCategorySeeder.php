@@ -12,6 +12,7 @@ class StoreCategorySeeder extends Seeder
      */
     public function run()
     {
+        DB::table('stores')->delete();
         DB::table('store_categories')->delete();
 
         DB::table('store_categories')->insert([
@@ -87,7 +88,7 @@ class StoreCategorySeeder extends Seeder
 
         DB::table('store_categories')->insert(
             [
-                'name' => 'Latteria',
+                'name' => 'Caseificio',
                 'icon' => 'cheese'
             ]
         );
@@ -126,5 +127,84 @@ class StoreCategorySeeder extends Seeder
                 'icon' => 'leaf'
             ]
         );
+
+        DB::table('store_categories')->insert(
+            [
+                'name' => 'Gastronomia',
+                'icon' => 'utensils'
+            ]
+        );
+
+        DB::table('store_categories')->insert(
+            [
+                'name' => 'Articoli per animali',
+                'icon' => 'bone'
+            ]
+        );
+
+        DB::table('store_categories')->insert(
+            [
+                'name' => 'Enoteca',
+                'icon' => 'wine-glass-alt'
+            ]
+        );
+
+        DB::table('store_categories')->insert(
+            [
+                'name' => 'Bar',
+                'icon' => 'coffee'
+            ]
+        );
+
+        DB::table('store_categories')->insert(
+            [
+                'name' => 'Prodotti per l\'infanzia',
+                'icon' => 'child'
+            ]
+        );
+
+        DB::table('store_categories')->insert(
+            [
+                'name' => 'Birrificio',
+                'icon' => 'beer'
+            ]
+        );
+
+        DB::table('store_categories')->insert(
+            [
+                'name' => 'Edicola',
+                'icon' => 'newspaper'
+            ]
+        );
+
+        DB::table('store_categories')->insert(
+            [
+                'name' => 'Colorificio',
+                'icon' => 'paint-brush'
+            ]
+        );
+
+        DB::table('store_categories')->insert(
+            [
+                'name' => 'Libreria',
+                'icon' => 'book'
+            ]
+        );
+
+        DB::table('store_categories')->insert(
+            [
+                'name' => 'Abbigliamento',
+                'icon' => 'female'
+            ]
+        );
+
+        DB::table('store_categories')->insert(
+            [
+                'name' => 'Farmacia',
+                'icon' => 'plus'
+            ]
+        );
+
+
     }
 }

@@ -38,7 +38,11 @@ class MapManager {
             { ne_lat: ne.lat, ne_lon: ne.lng, sw_lat: sw.lat, sw_lon: sw.lng },
             function(response) {
                 $(response).each(function(index, el) {
-                    var marker = L.marker([el.lat, el.lng]);
+                    var icon = L.AwesomeMarkers.icon({
+                        icon: el.category.icon,
+                        prefix: 'fa'
+                    });
+                    var marker = L.marker([el.lat, el.lng], {icon: icon});
                     marker.bindPopup(
                         "<b>" +
                             el.name +
